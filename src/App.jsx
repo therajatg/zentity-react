@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import AmountTable from "./components/AmountTable";
 import CurrencyForm from "./components/CurrencyForm";
 
