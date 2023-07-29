@@ -8,7 +8,7 @@ function App() {
 
   const amountHistoryHandler = (newAmount) => {
     setAmounts((prev) => {
-      return [newAmount, ...prev];
+      return [...prev, newAmount];
     });
   };
 

@@ -33,8 +33,10 @@ const CurrencyForm = ({ amountHistoryHandler }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (inputAmount === "") return;
-    amountHistoryHandler(amountInUSD);
+    if (inputAmount === "") {
+      return;
+    }
+    amountHistoryHandler({ inputAmount, selectedCurrency, amountInUSD });
     setInputAmount("");
     setAmountInUSD(0);
   };
@@ -61,9 +63,10 @@ const CurrencyForm = ({ amountHistoryHandler }) => {
             <input
               type="number"
               placeholder="Enter amount"
-              className="border border-s-0 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+              className="border border-s-0 rounded-lg px-4 py-2"
               onChange={amountChangeHandler}
               value={inputAmount}
+              required
             />
             <br />
             {inputAmount !== "" && (
