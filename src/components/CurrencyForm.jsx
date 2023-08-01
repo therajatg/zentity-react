@@ -22,13 +22,13 @@ const CurrencyForm = ({ amountHistoryHandler }) => {
     setSelectedCurrency(e.target.value);
 
     setAmountInUSD(
-      inputAmount ? inputAmount * currencyData[e.target.value] : 0
+      inputAmount ? inputAmount / currencyData[e.target.value] : 0
     );
   };
 
   const amountChangeHandler = (e) => {
     setInputAmount(e.target.value);
-    setAmountInUSD(e.target.value * currencyData[selectedCurrency]);
+    setAmountInUSD(e.target.value / currencyData[selectedCurrency]);
   };
 
   const submitHandler = (e) => {
