@@ -8,10 +8,10 @@ const CurrencyForm = ({ amountHistoryHandler }) => {
   const [amountInUSD, setAmountInUSD] = useState(0);
 
   useEffect(() => {
-    getCyrrencyData();
+    getCurrencyData();
   }, []);
 
-  const getCyrrencyData = async () => {
+  const getCurrencyData = async () => {
     const res = await axios.get(
       "https://v6.exchangerate-api.com/v6/0a84b2508f0c1390a34c45bc/latest/USD"
     );
